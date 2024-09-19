@@ -1,0 +1,14 @@
+.userExist{
+    color:red;
+}
+
+.superContainer{
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: lightblue;
+}
+
+.testo{
+    color: whitesmoke;
+}

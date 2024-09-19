@@ -1,0 +1,47 @@
+.container-fluid{
+    background-color: lightblue;
+    width: 100vw;
+}
+
+
+div.center{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: whitesmoke;
+}
+
+.crono{
+    background-color: whitesmoke;
+    height:138vh;
+    overflow-y: scroll;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    align-self: self-start;
+}
+
+
+#editor-container {
+    align-self: self-start;
+    display: flex;
+    margin-top: 2%;
+    margin-bottom: 2%;
+   
+}
+
+#editor {
+    background: none;
+    border:none;
+    outline: none;
+    color: black;
+    font-family: monospace;
+    font-size: 14px;
+    white-space: pre-wrap;
+    overflow: hidden;
+}
+
+
+#modal {
+    background-color: whitesmoke;
+}
+

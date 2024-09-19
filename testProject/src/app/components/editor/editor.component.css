@@ -1,0 +1,40 @@
+
+
+.editor{
+    height: 60vh;
+    max-height: 90vh;
+    resize:vertical;
+    overflow: auto;
+}
+
+
+.editor:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.position-relative {
+    position: relative;
+}
+  
+.position-absolute {
+top: 81%;
+z-index: 1000;
+}
+  
+.list-group{
+    max-width:15vw;
+}
+
+.list-group-item {
+cursor: pointer;
+}
+
+.search:hover{
+    background-color: whitesmoke;
+}
+
+.search:focus{
+    background-color: #007bff;
+}
+

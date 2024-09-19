@@ -1,0 +1,25 @@
+
+<div id="editor-group" class="container-fluid d-flex flex-column">
+
+    <ngs-code-editor class="editor" [theme]="theme" [codeModel]="model" [options]="options"></ngs-code-editor>
+    
+    <div class="form-group px-3 py-3 row ">
+
+        <input type="text" [formControl]="searchControl" placeholder="Cerca DB Model..." id="dbSearch" class="search btn btn-outline-primary mx-1 col-5 col-xl-4" (blur)="closeDropdown()" >
+        <ul class="list-group position-absolute w-100" *ngIf="filteredOptions && filteredOptions.length && isOpen">
+            <li 
+              class="list-group-item" 
+              *ngFor="let option of filteredOptions" 
+              (click)="selectOption(option, $event)"
+            >
+              {{ option }}
+            </li>
+        </ul>
+
+        <button (click)="aiCheck(model.value)" class="btn btn-outline-success mx-1 col-4 col-xl-3">Correggi</button>
+        <button (click)="diff(model.value, model1.value)" class="btn btn-outline-danger mx-1 col-3 col-xl-2">Errori</button>
+    </div>
+
+    <ngs-code-editor class="editor" [theme]="theme" [codeModel]="model1" [options]="options1" [readOnly] = "true"></ngs-code-editor>
+
+</div>

@@ -1,0 +1,103 @@
+.superContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#myCarousel{
+    display:flex;
+    background-color: lightblue;    
+}
+
+.carousel-indicators button{
+    background-color: white;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    background-color: white;
+    width:70vw;
+    height: 600px;
+}
+
+.carousel-item{
+    position:relative;
+}
+
+.title{
+    position: absolute;
+    top: 50%; /* Sposta l'elemento a metà altezza */
+    transform: translate(-100%, -58%); /* Centra l'elemento completamente */
+}
+
+.carousel-control-prev{
+    margin-left: -120px;
+}
+.carousel-control-next{
+    margin-right: -120px;
+}
+
+h1{
+    font-size:xx-large;
+}
+
+.col-lg-6{
+    padding:50px;
+}
+
+.lead{
+    font-size:x-large ;
+}
+
+
+@media (max-width: 992px) {
+    .logo{
+        display:none;
+    }
+    .carousel-item{
+        position:static;
+    }
+    .title{
+        position: static;
+        top: 0%; /* Sposta l'elemento a metà altezza */
+        transform: translate(0%, 0%); /* Centra l'elemento completamente */
+    }
+    .carousel-control-prev{
+        margin-left: -80px;
+    }
+    .carousel-control-next{
+        margin-right: -80px;
+    }
+    
+}
+
+@media (max-width: 600px) {
+    .logo{
+        display:none;
+    }
+    .carousel-item{
+        position:static;
+    }
+    .title{
+        position: static;
+        top: 0%; /* Sposta l'elemento a metà altezza */
+        transform: translate(0%, 0%); /* Centra l'elemento completamente */
+    }
+    .container{
+        height: 80vh;
+        width: 90vw;
+    }
+    .carousel-control-prev{
+        margin-left: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        z-index: 1050;
+    }
+    .carousel-control-next{
+        margin-right: 0;
+        background-color: rgba(0, 0, 0, 0.05);
+        z-index: 1050;
+    
+    }
+}
+
+  

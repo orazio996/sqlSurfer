@@ -1,0 +1,21 @@
+
+<div class="container-fluid">
+    
+    <div class="row justify-content-around">
+
+
+        <div id="editor-container" class="center col-md-8 px-4 py-5  border shadow-lg ">    <!--center-->
+            
+
+                <app-editor #editor class="editor" [selectedQuery]="selectedQuery" (refreshEvent)="switchFlag()"></app-editor>
+                
+            
+
+        </div>
+
+        <app-cronologia (selectedQueryEvent)="querySelection($event)" [refreshFlag]="refreshFlag" class="crono  border shadow-md col-md-3 px-4 py-5"></app-cronologia>
+
+
+        
+    </div>
+</div>

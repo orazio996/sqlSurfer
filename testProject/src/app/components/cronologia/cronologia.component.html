@@ -1,0 +1,19 @@
+
+
+<div class="d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary" style="width: auto;">
+    <div href="/" class="justify-content-center d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom"> <!--apri modale cronologia-->
+      <!--<svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>-->  <!--per icone vettoriali-->
+      <span class="fs-5 fw-semibold">CRONOLOGIA</span>
+    </div>
+    <div class="list-group list-group-flush border-bottom scrollarea">
+        <div id="forBlock" *ngFor="let correction of cronologia">
+            <div (click)="querySelection(correction)" id="{{correction.id}}" class="list-group-item list-group-item-action py-3 lh-sm" aria-current="true">  <!--apri queri nell editor-->
+                <div class="d-flex w-100 align-items-center justify-content-between">
+                <strong class="mb-1">#{{correction.id}}</strong>
+                <small>{{correction.timestamp.split('T')[0] + ' ' + correction.timestamp.split('T')[1].split('.')[0]}}</small>
+                </div>
+                <div class="correction col-10 mb-1 small">{{correction.query}}</div>
+            </div>
+        </div>
+    </div>
+  </div>

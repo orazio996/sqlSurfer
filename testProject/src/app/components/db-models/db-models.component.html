@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row g-1 justify-content-around align-items-center">
+
+    <div class="main col-md-8 px-4 py-5">
+      <app-models-editor #editor id="editor" [fileContent]="fileContent" [selectedModel]="selectedModel"></app-models-editor>
+      <div class="dropdown">
+        <button class="btn btn-outline-primary dropdown-toggle my-3" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Salva Modello
+        </button>
+        <ul class="dropdown-menu p-4">
+          <li><label for="modelName" style="margin-bottom: 5px;">Nome</label></li>
+          <li><input #modelName type="text" name="modelName" placeholder="Default => Timestamp" style="margin-bottom: 5px;"></li>
+          <li><button class="btn btn-outline-success " (click)="newModel(modelName.value, editor.model.value, $event)" style="margin-bottom: 5px;">Salva</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="models d-flex flex-column align-items-stretch flex-shrink-0 bg-body-tertiary col-md-3 px-4 py-5">
+      <div href="/" class="justify-content-around d-flex align-items-center flex-shrink-0 p-3 link-body-emphasis text-decoration-none border-bottom"> <!--apri modale cronologia-->
+        <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-5 fw-semibold">DB MODELS</span>
+        <div class="btn btn-outline-primary " (click)="importModel($event)">Importa</div>
+      </div>
+      
+      <div class="list-group list-group-flush border-bottom scrollarea">
+          <div *ngFor="let model of models">
+              <div (click)="modelSelection(model)" id="{{model.id}}" class="model list-group-item list-group-item-action py-3 lh-sm" aria-current="true">  <!--apri model nell editor-->
+                  <div class="d-flex w-100 align-items-center justify-content-between">
+                  <strong class="mb-1">#{{model.name?model.name:(model.timestamp.split('T')[0] + ' ' + model.timestamp.split('T')[1].split('.')[0])}}</strong>
+                  <small>{{model.timestamp.split('T')[0] + ' ' + model.timestamp.split('T')[1].split('.')[0]}}</small>
+                  </div>
+                  <div class="modeldef col-10 mb-1 small">{{model.def}}</div>
+              </div>
+          </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="mb-3" id="modale" *ngIf="showModal">
+  <div id="modal-content">
+    <div class="d-flex justify-content-between">
+      <label for="formFile" class="form-label">Importa Modello</label>
+      <button type="button" class="btn-close" aria-label="Close" (click)="importModel($event)"></button>
+    </div>
+    <input class="form-control" type="file" (change)="onFileSelected($event)">
+  </div>
+</div>

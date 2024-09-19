@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>YourAngularApp</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<div id="box">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-md">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">
+        <!--<img class='logo' src="../assets/logo2.png" alt="Image not found!"> favicon-->
+        SQL Surfer
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="isLogged()">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <!--<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>-->
+          <li class="nav-item">
+            <a class="nav-link" href="/about">About</a>
+          </li>
+        </ul>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="/signin" class="btn btn-primary">Accedi</a>
+          <a href="/signup" class="btn btn-outline-secondary">Registrati</a>
+        </div>
+      </div>
+  
+      <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="!isLogged()">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/workspace">Workspace</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " aria-current="page" href="/dbModels">DB Models</a>
+          </li>
+          
+        </ul>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <button (click)="logOut()" class="btn btn-outline-secondary">Esci</button>
+        </div>
+      </div>
+  
+    </div>
+  </nav>
+  
+  <body>
+    <router-outlet></router-outlet>
+  </body>
+  
+  
+  <footer class="shadow-md">
+        <img src="./assets/logo1.png" alt="Sql Surfer" style="height: 50px;">
+        <p>SQL Surfer, Orazio Mascali 2024</p>
+  </footer>
+</div>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,16 @@
+:host ::ng-deep .added {
+    background-color: #d4fcbc; /* verde chiaro per aggiunte */
+}
+
+:host ::ng-deep .removed {
+    background-color: #fbb6b6; /* rosso chiaro per rimozioni */
+}
+
+:host ::ng-deep .unchanged {
+    color: #000; /* colore normale per testo invariato */
+}
+
+.modal-header{
+    display: flex;
+    align-items: start;
+}
